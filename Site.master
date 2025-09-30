@@ -1,0 +1,65 @@
+<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Legacy Web Application</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        // HTML5 shim for IE8 and below
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+    </script>
+    <![endif]-->
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="page-wrapper">
+            <header class="site-header">
+                <div class="header-content">
+                    <h1 class="site-title">Legacy Web Application</h1>
+                    <nav class="main-navigation">
+                        <ul class="nav-menu">
+                            <li><a href="Default.aspx" class="nav-link">Home</a></li>
+                            <li><a href="DataGrid.aspx" class="nav-link">Data Grid</a></li>
+                            <li><a href="UserForm.aspx" class="nav-link">User Form</a></li>
+                            <li><a href="About.aspx" class="nav-link">About</a></li>
+                        </ul>
+                        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</div>
+                    </nav>
+                </div>
+            </header>
+            
+            <main class="main-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+            
+            <footer class="site-footer">
+                <div class="footer-content">
+                    <p>&copy; 2008 Legacy Web Application. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </form>
+    
+    <script type="text/javascript">
+        function toggleMobileMenu() {
+            var menu = document.getElementsByClassName('nav-menu')[0];
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
